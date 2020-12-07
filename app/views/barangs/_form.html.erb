@@ -1,0 +1,38 @@
+
+<%= form_with(model: barang, local: true) do |form| %>
+  <% if barang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(barang.errors.count, "error") %> prohibited this barang from being saved:</h2>
+
+      <ul>
+        <% barang.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <%= form.label :nama, class: "control-label"%>
+    <br>
+    <%= form.text_field :nama, clss: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :jenis %>
+    <br>
+    <%= form.text_field :jenis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :harga %>
+    <br>
+    <%= form.number_field :harga %>
+  </div>
+
+  <div class="actions">
+  <br>
+    <%= form.submit 'Tambah Data', class: 'btn btn-primary' %>
+    <%= link_to 'Back', barangs_path, class: 'btn btn-success' %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @barang.nama %>
+</p>
+
+<p>
+  <strong>Jenis:</strong>
+  <%= @barang.jenis %>
+</p>
+
+<p>
+  <strong>Harga:</strong>
+  <%= @barang.harga %>
+</p>
+
+<%= link_to 'Edit', edit_barang_path(@barang), class: 'btn btn-success btn-sm' %> 
+<%= link_to 'Back', barangs_path, class: 'btn btn-primary btn-sm' %>
+</div>
